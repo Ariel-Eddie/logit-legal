@@ -44,4 +44,4 @@ We may update these terms at any time. Continued use of the App constitutes acce
 
 ## Contact
 
-For questions: ariel@kmuriel.com
+For questions: arieleddie1@gmail.com

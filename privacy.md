@@ -41,4 +41,4 @@ We do not sell, share, or monetize your personal data in any way.
 
 ## Contact
 
-For questions about this policy: ariel@kmuriel.com
+For questions about this policy: arieleddie1@gmail.com
