@@ -2,7 +2,7 @@
 
 **Last updated: May 20, 2026**
 
-LogIt ("the App") is developed by Ariel Guidi. This policy explains how we handle your data.
+LogIt ("the App") is an independent project. This policy explains how we handle your data.
 
 ## Data We Collect
 
