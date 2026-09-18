@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ page.description | escape }}">
+  <meta name="theme-color" content="#174e42">
+  <title>{{ page.title | escape }} | HeyBlayz</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="wrap">
+    <a class="brand" href="../" aria-label="HeyBlayz homepage">HeyBlayz</a>
+    <nav aria-label="Main navigation">
+      <a href="../">Home</a>
+      <a href="../privacy/"{% if page.legal_kind == 'privacy' %} aria-current="page"{% endif %}>Privacy policy</a>
+      <a href="../terms/"{% if page.legal_kind == 'terms' %} aria-current="page"{% endif %}>Terms of service</a>
+    </nav>
+  </header>
+  <main id="main" class="wrap legal">
+    <h1>{{ page.title | escape }}</h1>
+    <p class="note">Effective date: <time datetime="2026-09-19">19 September 2026</time></p>
+    {{ content }}
+  </main>
+  <footer class="wrap">
+    <p>HeyBlayz by {{ site.data.heyblayz.publisher | escape }}</p>
+    <a href="mailto:{{ site.data.heyblayz.contact_email | escape }}">Contact</a>
+    <a href="../privacy/">Privacy policy</a>
+    <a href="../terms/">Terms of service</a>
+  </footer>
+</body>
+</html>
