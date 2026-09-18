@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="HeyBlayz is a voice-first fitness and nutrition app. Log workouts and meals with voice, text or photos, review your records, and sync with your own Google Drive account.">
+  <meta name="theme-color" content="#174e42">
+  <title>HeyBlayz | Voice-first fitness and nutrition</title>
+  <style>
+    :root { color-scheme: light; --paper: #f8faf7; --ink: #173d34; --muted: #50645d; --green: #174e42; --wash: #e5eee8; --line: #b8c9bf; --white: #fff; }
+    * { box-sizing: border-box; }
+    html { scroll-padding-top: 2rem; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.65 "Avenir Next", Avenir, "Trebuchet MS", sans-serif; }
+    a { color: inherit; text-underline-offset: .22em; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 3px solid var(--green); outline-offset: 5px; }
+    .skip { position: absolute; top: -5rem; left: 1rem; padding: .7rem 1rem; background: var(--white); z-index: 2; }
+    .skip:focus { top: 1rem; }
+    .wrap { width: min(1120px, calc(100% - 3rem)); margin-inline: auto; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.4rem; }
+    .brand { font-size: 1.6rem; font-weight: 800; letter-spacing: -.05em; text-decoration: none; }
+    nav { display: flex; flex-wrap: wrap; gap: .3rem 1.6rem; }
+    nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: .92rem; }
+    .hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; padding-block: 4rem 5rem; }
+    h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; line-height: 1.06; letter-spacing: -.045em; text-wrap: balance; }
+    h1 { font-size: clamp(3.2rem, 6.5vw, 5.5rem); margin: 0 0 1.6rem; }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 1.4rem; }
+    h3 { font-size: 1.15rem; line-height: 1.4; margin: 0 0 .5rem; }
+    p { margin: 0 0 1.2rem; max-width: 66ch; }
+    .intro { font-size: 1.2rem; line-height: 1.6; }
+    .note { color: var(--muted); font-size: .9rem; }
+    .button { display: inline-flex; align-items: center; min-height: 48px; padding: .65rem 1.25rem; border-radius: 30px; color: var(--white); background: var(--green); text-decoration: none; font-weight: 600; margin: .5rem 0 1rem; }
+    figure { margin: 0; }
+    .spoken { padding: 1.6rem; margin-bottom: 1.5rem; border-radius: 26px 26px 26px 4px; background: var(--green); color: var(--white); }
+    .spoken p { margin: 0; font-size: 1.25rem; }
+    .record { padding: 1.7rem; background: var(--white); border: 1px solid var(--line); border-radius: 12px; }
+    .record h3 { font-size: 1.35rem; }
+    .record dl { display: grid; grid-template-columns: repeat(3, 1fr); margin: 1.2rem 0; gap: 1rem; }
+    .record dt { color: var(--muted); font-size: .85rem; }
+    .record dd { margin: .1rem 0 0; font-size: 1.6rem; font-weight: 600; line-height: 1.2; }
+    .record p { margin: 0; font-size: .9rem; }
+    figcaption { margin-top: .8rem; font-size: .8rem; color: var(--muted); }
+    section { padding-block: 3.5rem; border-top: 1px solid var(--line); }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.4rem; padding-left: 1.4rem; margin: 2rem 0 0; }
+    .steps li { padding-left: .35rem; }
+    .steps p { color: var(--muted); margin-bottom: 0; }
+    .cloud { background: var(--wash); }
+    .cloud section { border-top: 0; display: grid; grid-template-columns: 1fr 1.25fr; gap: 3rem; }
+    .cloud ul { padding-left: 1.2rem; margin: 0; }
+    .cloud li { margin-bottom: .8rem; }
+    .privacy { max-width: 780px; }
+    .privacy h3 { margin-top: 1.8rem; }
+    .privacy p { color: var(--muted); }
+    footer { padding-block: 1.5rem 2rem; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; font-size: .85rem; color: var(--muted); }
+    footer p { margin: 0; }
+    @media (max-width: 720px) {
+      header { align-items: flex-start; flex-direction: column; gap: .3rem; }
+      nav { gap: .1rem 1.2rem; }
+      .hero { grid-template-columns: 1fr; padding-block: 2rem 3rem; }
+      .hero figure { max-width: 480px; }
+      .steps, .cloud section { grid-template-columns: 1fr; gap: 1.7rem; }
+      section { padding-block: 2.5rem; }
+      .wrap { width: calc(100% - 2rem); }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="wrap">
+    <a class="brand" href="./" aria-label="HeyBlayz homepage">HeyBlayz</a>
+    <nav aria-label="Main navigation">
+      <a href="#how-it-works">How it works</a>
+      <a href="#google-drive">Google Drive sync</a>
+      <a href="#privacy">Data and privacy</a>
+    </nav>
+  </header>
+  <main id="main">
+    <div class="hero wrap">
+      <div>
+        <h1>Speak it.<br>Log it.<br>Keep going.</h1>
+        <p class="intro">HeyBlayz is a voice-first fitness and nutrition app. Describe a workout, photograph a meal, or type a note. Blayz helps turn it into records you can review and save.</p>
+        <a class="button" href="#how-it-works">Explore HeyBlayz</a>
+        <p class="note">Currently in development, with iPhone testing first. Android is planned.</p>
+      </div>
+      <figure aria-label="An illustrative spoken workout and its structured record">
+        <div class="spoken"><p>“I did three sets of eight goblet squats with twenty kilos.”</p></div>
+        <div class="record">
+          <h3>Goblet squat</h3>
+          <dl><div><dt>Sets</dt><dd>3</dd></div><div><dt>Reps per set</dt><dd>8</dd></div><div><dt>Weight</dt><dd>20 kg</dd></div></dl>
+          <p>Review the details, then save your workout.</p>
+        </div>
+        <figcaption>Illustrative example, not a live recording or a screenshot.</figcaption>
+      </figure>
+    </div>
+    <section id="how-it-works" class="wrap" aria-labelledby="how-heading">
+      <h2 id="how-heading">Less typing. More context.</h2>
+      <ol class="steps">
+        <li><h3>Say what happened</h3><p>Record your voice, write a message, or add a photo. Combine a meal photo with a spoken description.</p></li>
+        <li><h3>Check the details</h3><p>Review suggested exercises, sets, reps, weights and meal details before saving. AI estimates can need correction.</p></li>
+        <li><h3>Follow your progress</h3><p>Revisit your history, nutrition, training and measurements. Use Blayz to help manage goals, remembered preferences and reminders.</p></li>
+      </ol>
+    </section>
+    <div class="cloud">
+      <section id="google-drive" class="wrap" aria-labelledby="cloud-heading">
+        <div><h2 id="cloud-heading">Your records.<br>Your Google account.</h2><p>Optional Google sign-in connects HeyBlayz to its hidden app-data folder in your own Google Drive.</p><p class="note">Google sync is currently being tested in the iPhone preview.</p></div>
+        <ul>
+          <li><strong>App data only.</strong> HeyBlayz requests access to its own app-data storage, not your ordinary Drive files, documents or photos.</li>
+          <li><strong>Changes, not database replacement.</strong> Sync merges record changes and deletions. It includes saved meals and workouts, catalogs, goals, measurements, conversations, memories, reminders and preferences.</li>
+          <li><strong>You choose the account.</strong> Existing local records are copied only with your confirmation. Different Google accounts have separate data.</li>
+          <li><strong>Visible sync controls.</strong> Sync runs when opening or returning to the app, or through “Sync now,” with status and errors shown in Settings.</li>
+        </ul>
+      </section>
+    </div>
+    <section id="privacy" class="wrap" aria-labelledby="privacy-heading">
+      <div class="privacy">
+        <h2 id="privacy-heading">Data and privacy overview</h2>
+        <p>HeyBlayz is an independent app by Ariel Guidi. This overview describes the current preview, including the distinction between cloud storage and AI processing.</p>
+        <h3>Google sign-in and storage</h3>
+        <p>Your Google account identifier selects the account’s local database, and your email identifies the connected account in Settings. Google authorization lets the app read and write its hidden Drive app-data folder. Your sync data goes directly between the app and your Google Drive; it is not stored in a developer-hosted HeyBlayz user database. Device security credentials are not included in sync.</p>
+        <h3>AI processing is separate</h3>
+        <p>When you use Blayz, your submitted text, audio, images and relevant app context can be sent through the app’s proxy to Google Gemini to answer requests and propose actions. This is separate from storing your records in Drive. See <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a>.</p>
+        <h3>Signing out and deleting records</h3>
+        <p>Signing out stops that account’s synchronization; it does not erase its existing Drive data or its local account database. Record deletions are synchronized, but earlier values can remain in the sync history used to preserve changes and conflicts. Deleting a record is not the same as permanently erasing that history.</p>
+        <h3>About this website</h3>
+        <p>This page is hosted on GitHub Pages and adds no analytics scripts, advertising or sign-in forms. This overview is not a replacement for the full HeyBlayz privacy policy and terms, which must be finalized before public release. The existing LogIt legal documents concern LogIt, not this preview.</p>
+        <p>AI-generated nutrition and training information may be inaccurate. Review your records and seek qualified advice for medical questions.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap"><p>HeyBlayz · Voice-first fitness and nutrition</p><a href="#privacy">Data and privacy overview</a></footer>
+</body>
+</html>
