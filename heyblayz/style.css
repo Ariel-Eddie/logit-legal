@@ -1,0 +1,63 @@
+:root { color-scheme: light; --paper: #f8faf7; --ink: #173d34; --muted: #50645d; --green: #174e42; --wash: #e5eee8; --line: #b8c9bf; --white: #fff; }
+* { box-sizing: border-box; }
+html { scroll-padding-top: 2rem; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.65 "Avenir Next", Avenir, "Trebuchet MS", sans-serif; }
+a { color: inherit; text-underline-offset: .22em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 3px solid var(--green); outline-offset: 5px; }
+.skip { position: absolute; top: -5rem; left: 1rem; padding: .7rem 1rem; background: var(--white); z-index: 2; }
+.skip:focus { top: 1rem; }
+.wrap { width: min(1120px, calc(100% - 3rem)); margin-inline: auto; }
+header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.4rem; }
+.brand { font-size: 1.6rem; font-weight: 800; letter-spacing: -.05em; text-decoration: none; }
+nav { display: flex; flex-wrap: wrap; gap: .3rem 1.6rem; }
+nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: .92rem; }
+.hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; padding-block: 4rem 5rem; }
+h1, h2 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; line-height: 1.06; letter-spacing: -.045em; text-wrap: balance; }
+h1 { font-size: clamp(3.2rem, 6.5vw, 5.5rem); margin: 0 0 1.6rem; }
+h2 { font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 1.4rem; }
+h3 { font-size: 1.15rem; line-height: 1.4; margin: 0 0 .5rem; }
+p { margin: 0 0 1.2rem; max-width: 66ch; }
+.intro { font-size: 1.2rem; line-height: 1.6; }
+.note { color: var(--muted); font-size: .9rem; }
+.button { display: inline-flex; align-items: center; min-height: 48px; padding: .65rem 1.25rem; border-radius: 30px; color: var(--white); background: var(--green); text-decoration: none; font-weight: 600; margin: .5rem 0 1rem; }
+figure { margin: 0; }
+.spoken { padding: 1.6rem; margin-bottom: 1.5rem; border-radius: 26px 26px 26px 4px; background: var(--green); color: var(--white); }
+.spoken p { margin: 0; font-size: 1.25rem; }
+.record { padding: 1.7rem; background: var(--white); border: 1px solid var(--line); border-radius: 12px; }
+.record h3 { font-size: 1.35rem; }
+.record dl { display: grid; grid-template-columns: repeat(3, 1fr); margin: 1.2rem 0; gap: 1rem; }
+.record dt { color: var(--muted); font-size: .85rem; }
+.record dd { margin: .1rem 0 0; font-size: 1.6rem; font-weight: 600; line-height: 1.2; }
+.record p { margin: 0; font-size: .9rem; }
+figcaption { margin-top: .8rem; font-size: .8rem; color: var(--muted); }
+section { padding-block: 3.5rem; border-top: 1px solid var(--line); }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.4rem; padding-left: 1.4rem; margin: 2rem 0 0; }
+.steps li { padding-left: .35rem; }
+.steps p { color: var(--muted); margin-bottom: 0; }
+.cloud { background: var(--wash); }
+.cloud section { border-top: 0; display: grid; grid-template-columns: 1fr 1.25fr; gap: 3rem; }
+.cloud ul { padding-left: 1.2rem; margin: 0; }
+.cloud li { margin-bottom: .8rem; }
+.privacy { max-width: 780px; }
+.privacy h3 { margin-top: 1.8rem; }
+.privacy p { color: var(--muted); }
+footer { padding-block: 1.5rem 2rem; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; font-size: .85rem; color: var(--muted); }
+footer p { margin: 0; }
+@media (max-width: 720px) {
+  header { align-items: flex-start; flex-direction: column; gap: .3rem; }
+  nav { gap: .1rem 1.2rem; }
+  .hero { grid-template-columns: 1fr; padding-block: 2rem 3rem; }
+  .hero figure { max-width: 480px; }
+  .steps, .cloud section { grid-template-columns: 1fr; gap: 1.7rem; }
+  section { padding-block: 2.5rem; }
+  .wrap { width: calc(100% - 2rem); }
+}
+.legal { max-width: 780px; padding-block: 3rem 4rem; overflow-wrap: anywhere; }
+.legal h1 { font-size: clamp(2.6rem, 6vw, 4rem); }
+.legal h2 { font-size: 1.9rem; margin-top: 2.5rem; letter-spacing: -.025em; }
+.legal h3 { margin-top: 1.5rem; }
+.legal li { margin-bottom: .75rem; }
+.legal .contents { padding: 1rem 1.4rem; background: var(--wash); border-radius: 12px; }
+.legal .contents a { display: inline-block; padding-block: .2rem; }
+footer a { display: inline-flex; align-items: center; min-height: 44px; }
